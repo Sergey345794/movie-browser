@@ -75,34 +75,9 @@ A few things I didn't include:
 
 **iOS Testing** - The project has full iOS support (icons, Info.plist configured, etc.) but I didn't actually test it on iOS devices or simulators since that wasn't required for the assignment. It should work fine though based on the standard Flutter setup.
 
-**Dark Theme** - Sticking with Material 3 light theme to keep things simple.
-
-**Advanced Filters** - No genre/year filters because OMDb's free API is pretty limited there.
-
 **Pull-to-Refresh** - You can retry manually with the error screen button, but no swipe-down refresh.
 
-**Cache Expiration** - Cache is infinite. Once you view a movie, it stays cached forever (or until you clear app data).
-
-**Share Functionality** - No social sharing buttons.
-
-**Offline-First Sync** - Cache is fallback-only, not a full offline mode with sync queues.
-
-## Tech Stack
-
-- **flutter_bloc** (^9.0.0) - State management
-- **hive** (^2.2.3) - Local NoSQL database
-- **dio** (^5.4.0) - HTTP client for API calls
-- **flutter_hooks** (^0.20.3) - Local UI state (controllers, timers)
-- **intl** (^0.20.2) - Localization
-- **equatable** (^2.0.5) - Value equality for BLoC states
-- **flutter_dotenv** (^6.0.0) - Environment variables
-- **bloc_test** (^10.0.0) - Testing BLoCs
-- **mocktail** (^1.0.1) - Mocking dependencies
-
-## Local Storage
-
-Three Hive boxes: Box, Purpose, Max Items
-| `favorites_box` | Saved movies | Unlimited |
+ Saved movies | Unlimited |
 | `details_cache_box` | Movie details for offline | Unlimited |
 | `search_history_box` | Recent searches | 20 (FIFO) |
 
@@ -114,8 +89,3 @@ Three Hive boxes: Box, Purpose, Max Items
 - **ValueKey on list items** - Prevents unnecessary rebuilds during pagination
 - **Pagination trigger** - Loads next page at 90% scroll, not at the very end
 
-## Known Issues
-
-- **OMDb Free Tier** - Limited to 1,000 requests/day
-- **Some posters missing** - API returns "N/A" for poster URL on some movies (we show a fallback icon)
-- **RTL Layout** - Hebrew translation works but some UI elements could use more polish for proper RTL
