@@ -77,9 +77,6 @@ A few things I didn't include:
 
 **Pull-to-Refresh** - You can retry manually with the error screen button, but no swipe-down refresh.
 
- Saved movies | Unlimited |
-| `details_cache_box` | Movie details for offline | Unlimited |
-| `search_history_box` | Recent searches | 20 (FIFO) |
 
 ## Performance Notes
 
